@@ -1,6 +1,18 @@
-<h1>Blog Posts</h1>
-
+<h1>Blogs</h1>
+<%= link_to "New Blog", new_blog_path, :class => 'btn btn-success' %>
 <% @blogs.each do |blog| %>
-	<h3><%=blog.title %></h3>
-	<p><%=blog.body%></p>
+	<div style="padding: 2.5px;">
+		<div class="card bg-dark text-white">
+		  <div class="card-header">
+		    <%=blog.title %>
+		  </div>
+		  <div class="card-body">
+		    <blockquote class="blockquote mb-0">
+		      <span class="d-inline-block"><%=blog.quote_text%></span>
+		      <footer class="blockquote-footer text-white"><cite title="Source Title"><%=blog.created_by%></cite></footer>
+		    </blockquote>
+		    <%= link_to "Read More...", blog_path(blog), :class => 'btn btn-dark text-primary', :style => 'font-style: italic' %>
+		  </div>
+		</div>
+	</div>
 <%end%>

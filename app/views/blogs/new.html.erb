@@ -1,6 +1,12 @@
 <h1>Add Blog</h1>
 
 <%= form_for :blog, url: blogs_path do |f| %>
+	<% if @blog.errors.any? %>
+		<% @blog.errors.full_messages.each do |msg| %>
+			<div class="alert alert-danger"><%= msg %></div>
+		<% end %>
+	<% end %>
+
 	<p>
 		<%= f.label :title %> <br>
 		<%= f.text_field(:title, {:class => 'form-control'}) %>
@@ -12,8 +18,21 @@
 	</p>
 
 	<p>
+		<%= f.label :created_by %> <br>
+		<%= f.text_field(:created_by, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.label :quote_text %> <br>
+		<%= f.text_field(:quote_text, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
 		<%= f.submit({:class => 'btn btn-primary'})%>
 	</p>
+
+	
+    <%= link_to "Back", home_path, :class => 'btn btn-dark' %>
 
 
 <%end %>

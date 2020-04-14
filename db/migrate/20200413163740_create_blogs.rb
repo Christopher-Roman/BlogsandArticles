@@ -4,6 +4,7 @@ class CreateBlogs < ActiveRecord::Migration[6.0]
       t.string :title
       t.text :body
       t.string :created_by
+      t.string :quote_text
 
       t.timestamps
     end

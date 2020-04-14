@@ -1,2 +1,9 @@
-<h2> <%= @blog.title %></h2>
-<p><%= @blog.body %></p>
+<div class="card bg-dark text-white">
+  <div class="card-body">
+    <h2 class="card-title"><%= @blog.title %></h2>
+    <h5 class="card-subtitle mb-2 text-muted">By: <%= @blog.created_by %></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Posted: <%= localize(@blog.created_at, :format => :short) %></h6>
+    <p class="card-text"><%= @blog.body %></p>
+    <%= link_to "Back", home_path, :class => 'btn btn-dark' %>
+  </div>
+</div>

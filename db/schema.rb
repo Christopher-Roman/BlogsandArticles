@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_163805) do
     t.string "title"
     t.text "body"
     t.string "created_by"
+    t.string "quote_text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
