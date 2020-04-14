@@ -1,9 +1,9 @@
-<div class="card bg-dark text-white">
+<div class="card bg-dark text-white" style="padding: 20px; border-radius: 25px;">
   <div class="card-body">
-    <h2 class="card-title"><%= @blog.title %></h2>
-    <h5 class="card-subtitle mb-2 text-muted">By: <%= @blog.created_by %></h5>
-    <h6 class="card-subtitle mb-2 text-muted">Posted: <%= localize(@blog.created_at, :format => :short) %></h6>
-    <p class="card-text"><%= @blog.body %></p>
-    <%= link_to "Back", home_path, :class => 'btn btn-dark' %>
+    <h1 class="card-title"><%= @blog.title %></h1>
+    <h6 class="card-subtitle mb-2 text-white">By: <%= @blog.created_by %></h6>
+    <p class="card-subtitle mb-2 text-white">Posted: <%= localize(@blog.created_at, :format => :short) %></p>
+    <h4 class="card-text"><%= @blog.body %></h4>
+    <%= link_to "Back", home_path, :class => 'btn btn-dark text-primary' %>
   </div>
 </div>
