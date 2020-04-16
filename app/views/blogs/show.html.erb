@@ -5,5 +5,10 @@
     <p class="card-subtitle mb-2 text-white">Posted: <%= localize(@blog.created_at, :format => :short) %></p>
     <h4 class="card-text"><%= @blog.body %></h4>
     <%= link_to "Back", home_path, :class => 'btn btn-dark text-primary' %>
+	  <%= link_to "Edit", edit_blog_path(@blog), :class => 'btn btn-dark text-primary' %>
+	  <%= link_to "Delete", blog_path(@blog), 
+						method: :delete,
+						data: {confirm: 'Are you sure?'},
+						:class => 'btn btn-dark text-danger' %>
   </div>
 </div>
