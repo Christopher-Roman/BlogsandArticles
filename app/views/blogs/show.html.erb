@@ -4,11 +4,15 @@
     <h6 class="card-subtitle mb-2 text-white">By: <%= @blog.created_by %></h6>
     <p class="card-subtitle mb-2 text-white">Posted: <%= localize(@blog.created_at, :format => :short) %></p>
     <h4 class="card-text"><%= @blog.body %></h4>
-    <%= link_to "Back", home_path, :class => 'btn btn-dark text-primary' %>
-	  <%= link_to "Edit", edit_blog_path(@blog), :class => 'btn btn-dark text-primary' %>
-	  <%= link_to "Delete", blog_path(@blog), 
-						method: :delete,
-						data: {confirm: 'Are you sure?'},
-						:class => 'btn btn-dark text-danger' %>
+    <% if @blog.created_by == session[:user_id] %>
+      <%= link_to "Back", home_path, :class => 'btn btn-dark text-primary' %>
+  	  <%= link_to "Edit", edit_blog_path(@blog), :class => 'btn btn-dark text-primary' %>
+  	  <%= link_to "Delete", blog_path(@blog), 
+  						method: :delete,
+  						data: {confirm: 'Are you sure?'},
+  						:class => 'btn btn-dark text-danger' %>
+    <% else %>
+      <%= link_to "Back", home_path, :class => 'btn btn-dark text-primary' %>
+    <% end %>
   </div>
 </div>
