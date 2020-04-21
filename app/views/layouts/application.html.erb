@@ -15,10 +15,10 @@
     <nav class="navbar navbar-inverse navbar-dark bg-dark">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">BLOGS & ARTICLES</a>
+        <%= link_to 'BLOGS & ARTICLES', home_path%>
         <ul class="nav navbar-nav list-group list-group-horizontal">
           <li class="nav-item active">
-            <button class="btn"><%= link_to "Blogs", home_path %></button> 
+            <button class="btn"><%= link_to "Blogs", blogs_path %></button> 
           </li>
           <li class="nav-item active">
             <button class="btn"><%= link_to "Articles", home_path %></button> 
