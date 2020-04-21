@@ -1,0 +1,18 @@
+<div class="bg-dark text-white" style="padding: 20px; border-radius: 25px;">
+	<h1>Add Article</h1>
+	<br>
+	<%= form_tag articles_path do %>
+	   <%= label_tag :title%>
+	   <%= text_field_tag :title, nil, {:class => 'form-control'} %>
+	   <br>
+	   <%= label_tag :body%>
+	   <%= text_area_tag :body, nil, :class => 'form-control' %>
+	   <br>
+	   <%= label_tag :source_link%>
+	   <%= text_field_tag :source_link, nil, :class => 'form-control' %>
+	   <br>
+	   <%= submit_tag 'Submit', :class => 'btn btn-secondary'%>
+	   <%= link_to "Back", articles_path, :class => 'btn btn-dark text-primary' %>
+	<%end%>
+
+</div>
