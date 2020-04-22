@@ -6,11 +6,17 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     session[:user_id] = @user.username
-    redirect_to home_path
+    if @user.save
+      flash[:success] = "Welcome! You have successfully created an account!"
+      redirect_to home_path
+    else
+      flash.now[:alert] = @user.errors.full_messages.to_sentence
+      render 'new'
+    end
   end
 
   private
   def user_params
-	params.permit(:username, :password)
+	  params.permit(:username, :password, :password_confirmation)
   end
 end
