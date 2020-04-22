@@ -8,8 +8,12 @@
 		  </div>
 		  <div class="card-body">
 		    <blockquote class="blockquote mb-0">
-		      <%= link_to "Source Link", "#{article.source_link}", :target => "_blank" %>
-		      <footer class="blockquote-footer text-white"><cite title="Source Title"><%=article.created_by%></cite></footer>
+		      <span class="d-inline-block" style="font-style: italic;"><%=article.opening_statement%></span>
+		      <footer class="blockquote-footer text-white">
+		      	<cite title="Source Title">
+		      		<%= link_to "Source Link", "#{article.source_link}", :target => "_blank" %>
+		      		</cite>
+		      </footer>
 		    </blockquote>
 		    <%= link_to "Read More...", article_path(article), :class => 'btn btn-dark text-primary', :style => 'font-style: italic' %>
 		  </div>

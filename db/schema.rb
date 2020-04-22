@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_144447) do
     t.text "body"
     t.string "created_by"
     t.string "source_link"
+    t.string "opening_statement"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

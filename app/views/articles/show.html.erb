@@ -1,0 +1,19 @@
+<div class="card bg-dark text-white" style="padding: 20px; border-radius: 25px;">
+  <div class="card-body">
+    <h1 class="card-title"><%= @article.title %></h1>
+    <h6 class="card-subtitle mb-2 text-white">By: <%= @article.created_by %></h6>
+    <p class="card-subtitle mb-2 text-white">Posted: <%= localize(@article.created_at, :format => :short) %></p>
+    <h2 class="card-text"><%= @article.opening_statement %></h2>
+    <h4 class="card-text"><%= @article.body %></h4>
+    <% if @article.created_by == session[:user_id] %>
+      <%= link_to "Back", articles_path, :class => 'btn btn-dark text-primary' %>
+  	  <%= link_to "Edit", edit_article_path(@article), :class => 'btn btn-dark text-primary' %>
+  	  <%= link_to "Delete", article_path(@article), 
+  						method: :delete,
+  						data: {confirm: 'Are you sure?'},
+  						:class => 'btn btn-dark text-danger' %>
+    <% else %>
+      <%= link_to "Back", articles_path, :class => 'btn btn-dark text-primary' %>
+    <% end %>
+  </div>
+</div>
