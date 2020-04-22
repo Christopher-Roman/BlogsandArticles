@@ -1,0 +1,39 @@
+<div class="bg-dark text-white" style="padding: 20px; border-radius: 25px;">
+<h1>Edit Article</h1>
+  <%= form_for :article, url: article_path(@article), method: :patch do |f| %>
+    <% if @article.errors.any? %>
+      <% @article.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger"><%= msg %></div>
+      <% end %>
+    <% end %>
+
+    <p>
+      <%= f.label :title %> <br>
+      <%= f.text_field(:title, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+      <%= f.label :opening_statement %> <br>
+      <%= f.text_area(:opening_statement, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+      <%= f.label :body %> <br>
+      <%= f.text_area(:body, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+      <%= f.label :source_link %> <br>
+      <%= f.text_field(:source_link, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+      <%= f.submit({:class => 'btn btn-primary'})%>
+    </p>
+
+
+      <%= link_to "Back", articles_path, :class => 'btn btn-dark' %>
+
+
+  <%end %>
+</div>

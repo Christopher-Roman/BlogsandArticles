@@ -7,27 +7,19 @@
 			<% end %>
 		<% end %>
 
-		<p>
 			<%= f.label :title %> <br>
-			<%= f.text_field(:title, {:class => 'form-control'}) %>
-		</p>
-
-		<p>
+			<%= f.text_field(:title, {:class => 'form-control', :placeholder => 'Blog Title'}) %>
+			<br>
 			<%= f.label :body %> <br>
-			<%= f.text_area(:body, {:class => 'form-control'}) %>
-		</p>
-
-		<p>
+			<%= f.text_area(:body, {:class => 'form-control', :placeholder => 'Blog Body'}) %>
+			<br>
 			<%= f.label :quote_text %> <br>
-			<%= f.text_field(:quote_text, {:class => 'form-control'}) %>
-		</p>
-
-		<p>
+			<%= f.text_field(:quote_text, {:class => 'form-control', :placeholder => 'Inticing Blog Sample'}) %>
+			<br>
 			<%= f.submit({:class => 'btn btn-secondary'})%>
-		</p>
 
 
-	    <%= link_to "Back", blog_path, :class => 'btn btn-dark' %>
+	    <%= link_to "Back", blogs_path, :class => 'btn btn-dark text-primary' %>
 
 
 	<%end %>
