@@ -1,7 +1,11 @@
 <div class="container">
 	<div style="text-align: center;">
-		<h1>Welcome to Blogs & Articles</h1>
-		<h6><a><%= link_to "Create", new_user_path, style: "color: white; font-style: italic; font-weight: bold; text-decoration: underline;" %></a> an account or <a><%= link_to "Login", new_session_path, style: "color: white; font-style: italic; font-weight: bold; text-decoration: underline;" %></a></h6>
+		<% if current_user %>
+			<h1>Welcome to Blogs & Articles</h1>
+		<% else %>
+			<h1>Welcome to Blogs & Articles</h1>
+			<h6><a><%= link_to "Create", new_user_path, style: "color: white; font-style: italic; font-weight: bold; text-decoration: underline;" %></a> an account or <a><%= link_to "Login", new_session_path, style: "color: white; font-style: italic; font-weight: bold; text-decoration: underline;" %></a></h6>
+		<% end %>
 	</div>
 	<div class="col" style="text-align: center;">
 		<div class="row" style="padding-left: 100px;">
