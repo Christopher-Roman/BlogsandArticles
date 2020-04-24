@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   # post 'login', to: 'sessions#create'
   # get 'welcome', to: 'sessions#welcome'
 
-  resources :sessions
-  resources :blogs
-  resources :articles
+  resources :sessions, only: [:create, :new, :destroy]
+  resources :blogs, only: [:new, :edit, :create, :index, :show]
+  resources :articles, only: [:new, :edit, :create, :index, :show]
   resources :users, only: [:new, :create]
 end
